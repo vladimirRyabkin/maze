@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='contener'>
+        <div class='info'>
+            <div class = 'couterStep'>Сделано ходов:</div>
+            <div class = 'couterWrong'>Сделано ошибок:</div>
+            <div class = 'timer'>HH:MM:SS</div>
+        </div>
+        <div class='maze'>
+            <table>
+                <tr>
+                    <td x = '1' y = '1'></td>
+                    <td x = '1' y = '2'></td>
+                    <td x = '1' y = '3'></td>
+                    <td x = '1' y = '4'></td>
+                    <td x = '1' y = '5'></td>
+                    <td x = '1' y = '6'></td>
+                    <td x = '1' y = '7'></td>
+                    <td x = '1' y = '8'></td>
+                    <td x = '1' y = '9'></td>
+                    <td x = '1' y = '10' class='wall'></td>
+                    <td x = '1' y = '11'></td>
+                    <td x = '1' y = '12'></td>
+                    <td x = '1' y = '13'></td>
+                    <td x = '1' y = '14'></td>
+                    <td x = '1' y = '15'></td>
+                    <td x = '1' y = '16'></td>
+                    <td x = '1' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '2' y = '1'></td>
+                    <td x = '2' y = '2' class='wall'></td>
+                    <td x = '2' y = '3' class='wall'></td>
+                    <td x = '2' y = '4' class='wall'></td>
+                    <td x = '2' y = '5'></td>
+                    <td x = '2' y = '6' class='wall'></td>
+                    <td x = '2' y = '7' class='wall'></td>
+                    <td x = '2' y = '8' class='wall'></td>
+                    <td x = '2' y = '9'></td>
+                    <td x = '2' y = '10' class='wall'></td>
+                    <td x = '2' y = '11'></td>
+                    <td x = '2' y = '12' class='wall'></td>
+                    <td x = '2' y = '13' class='wall'></td>
+                    <td x = '2' y = '14' class='wall'></td>
+                    <td x = '2' y = '15'></td>
+                    <td x = '2' y = '16' class='wall'></td>
+                    <td x = '2' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '3' y = '1'></td>
+                    <td x = '3' y = '2'></td>
+                    <td x = '3' y = '3'></td>
+                    <td x = '3' y = '4' class='wall'></td>
+                    <td x = '3' y = '5'></td>
+                    <td x = '3' y = '6' class='wall'></td>
+                    <td x = '3' y = '7'></td>
+                    <td x = '3' y = '8' class='wall'></td>
+                    <td x = '3' y = '9'></td>
+                    <td x = '3' y = '10' class='wall'></td>
+                    <td x = '3' y = '11'></td>
+                    <td x = '3' y = '12'></td>
+                    <td x = '3' y = '13'></td>
+                    <td x = '3' y = '14' class='wall'></td>
+                    <td x = '3' y = '15'></td>
+                    <td x = '3' y = '16' class='wall'></td>
+                    <td x = '3' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '4' y = '1' class='wall'></td>
+                    <td x = '4' y = '2' class='wall'></td>
+                    <td x = '4' y = '3' class='wall'></td>
+                    <td x = '4' y = '4' class='wall'></td>
+                    <td x = '4' y = '5'></td>
+                    <td x = '4' y = '6' class='wall'></td>
+                    <td x = '4' y = '7'></td>
+                    <td x = '4' y = '8' class='wall'></td>
+                    <td x = '4' y = '9'></td>
+                    <td x = '4' y = '10' class='wall'></td>
+                    <td x = '4' y = '11' class='wall'></td>
+                    <td x = '4' y = '12' class='wall'></td>
+                    <td x = '4' y = '13' class='wall'></td>
+                    <td x = '4' y = '14' class='wall'></td>
+                    <td x = '4' y = '15'></td>
+                    <td x = '4' y = '16' class='wall'></td>
+                    <td x = '4' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '5' y = '1'></td>
+                    <td x = '5' y = '2' ></td>
+                    <td x = '5' y = '3' ></td>
+                    <td x = '5' y = '4'  class='wall'></td>
+                    <td x = '5' y = '5' ></td>
+                    <td x = '5' y = '6'  class='wall'></td>
+                    <td x = '5' y = '7' ></td>
+                    <td x = '5' y = '8'  class='wall'></td>
+                    <td x = '5' y = '9' ></td>
+                    <td x = '5' y = '10' ></td>
+                    <td x = '5' y = '11' ></td>
+                    <td x = '5' y = '12' ></td>
+                    <td x = '5' y = '13' ></td>
+                    <td x = '5' y = '14' ></td>
+                    <td x = '5' y = '15' ></td>
+                    <td x = '5' y = '16'  class='wall'></td>
+                    <td x = '5' y = '17' ></td>
+                </tr>
+                <tr>
+                    <td x = '6' y = '1'></td>
+                    <td x = '6' y = '2' class='wall'></td>
+                    <td x = '6' y = '3'></td>
+                    <td x = '6' y = '4' class='wall'></td>
+                    <td x = '6' y = '5'></td>
+                    <td x = '6' y = '6' class='wall'></td>
+                    <td x = '6' y = '7'></td>
+                    <td x = '6' y = '8' class='wall'></td>
+                    <td x = '6' y = '9' class='wall'></td>
+                    <td x = '6' y = '10' class='wall'></td>
+                    <td x = '6' y = '11' class='wall'></td>
+                    <td x = '6' y = '12' class='wall'></td>
+                    <td x = '6' y = '13' class='wall'></td>
+                    <td x = '6' y = '14' class='wall'></td>
+                    <td x = '6' y = '15' class='wall'></td>
+                    <td x = '6' y = '16' class='wall'></td>
+                    <td x = '6' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '7' y = '1'></td>
+                    <td x = '7' y = '2' class='wall'></td>
+                    <td x = '7' y = '3'></td>
+                    <td x = '7' y = '4'></td>
+                    <td x = '7' y = '5'></td>
+                    <td x = '7' y = '6' class='wall'></td>
+                    <td x = '7' y = '7'></td>
+                    <td x = '7' y = '8'></td>
+                    <td x = '7' y = '9'></td>
+                    <td x = '7' y = '10'></td>
+                    <td x = '7' y = '11'></td>
+                    <td x = '7' y = '12' class='wall'></td>
+                    <td x = '7' y = '13'></td>
+                    <td x = '7' y = '14'></td>
+                    <td x = '7' y = '15'></td>
+                    <td x = '7' y = '16'></td>
+                    <td x = '7' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '8' y = '1'></td>
+                    <td x = '8' y = '2' class='wall'></td>
+                    <td x = '8' y = '3' class='wall'></td>
+                    <td x = '8' y = '4' class='wall'></td>
+                    <td x = '8' y = '5' class='wall'></td>
+                    <td x = '8' y = '6' class='wall'></td>
+                    <td x = '8' y = '7'></td>
+                    <td x = '8' y = '8' class='wall'></td>
+                    <td x = '8' y = '9' class='wall'></td>
+                    <td x = '8' y = '10' class='wall'></td>
+                    <td x = '8' y = '11' class='wall'></td>
+                    <td x = '8' y = '12' class='wall'></td>
+                    <td x = '8' y = '13'></td>
+                    <td x = '8' y = '14' class='wall'></td>
+                    <td x = '8' y = '15' class='wall'></td>
+                    <td x = '8' y = '16' class='wall'></td>
+                    <td x = '8' y = '17' class='wall'></td>
+                </tr>
+                <tr>
+                    <td  x = '9' y = '1'></td>
+                    <td  x = '9' y = '2' class='wall'></td>
+                    <td  x = '9' y = '3'></td>
+                    <td  x = '9' y = '4'></td>
+                    <td  x = '9' y = '5'></td>
+                    <td  x = '9' y = '6'></td>
+                    <td  x = '9' y = '7'></td>
+                    <td  x = '9' y = '8'></td>
+                    <td  x = '9' y = '9'></td>
+                    <td  x = '9' y = '10'></td>
+                    <td  x = '9' y = '11'></td>
+                    <td  x = '9' y = '12' class='wall'></td>
+                    <td  x = '9' y = '13'></td>
+                    <td  x = '9' y = '14'></td>
+                    <td  x = '9' y = '15'></td>
+                    <td  x = '9' y = '16' class='wall'></td>
+                    <td  x = '9' y = '17'></td>
+                </tr>
+                <tr>
+                    <td  x = '10' y = '1'></td>
+                    <td  x = '10' y = '2' class='wall'></td>
+                    <td  x = '10' y = '3' class='wall'></td>
+                    <td  x = '10' y = '4' class='wall'></td>
+                    <td  x = '10' y = '5'></td>
+                    <td  x = '10' y = '6' class='wall'></td>
+                    <td  x = '10' y = '7' class='wall'></td>
+                    <td  x = '10' y = '8' class='wall'></td>
+                    <td  x = '10' y = '9' class='wall'></td>
+                    <td  x = '10' y = '10' class='wall'></td>
+                    <td  x = '10' y = '11'></td>
+                    <td  x = '10' y = '12' class='wall'></td>
+                    <td  x = '10' y = '13' class='wall'></td>
+                    <td  x = '10' y = '14' class='wall'></td>
+                    <td  x = '10' y = '15'></td>
+                    <td  x = '10' y = '16' class='wall'></td>
+                    <td  x = '10' y = '17'></td>
+                </tr>
+                <tr>
+                    <td  x = '11' y = '1'></td>
+                    <td  x = '11' y = '2'></td>
+                    <td  x = '11' y = '3'></td>
+                    <td  x = '11' y = '4' class='wall'></td>
+                    <td  x = '11' y = '5'></td>
+                    <td  x = '11' y = '6'></td>
+                    <td  x = '11' y = '7'></td>
+                    <td  x = '11' y = '8'></td>
+                    <td  x = '11' y = '9'></td>
+                    <td  x = '11' y = '10' class='wall'></td>
+                    <td  x = '11' y = '11'></td>
+                    <td  x = '11' y = '12'></td>
+                    <td  x = '11' y = '13'></td>
+                    <td  x = '11' y = '14' class='wall'></td>
+                    <td  x = '11' y = '15'></td>
+                    <td  x = '11' y = '16'></td>
+                    <td  x = '11' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '12' y = '1' class='wall'></td>
+                    <td x = '12' y = '2' class='wall'></td>
+                    <td x = '12' y = '3'></td>
+                    <td x = '12' y = '4' class='wall'></td>
+                    <td x = '12' y = '5' class='wall'></td>
+                    <td x = '12' y = '6' class='wall'></td>
+                    <td x = '12' y = '7' class='wall'></td>
+                    <td x = '12' y = '8' class='wall'></td>
+                    <td x = '12' y = '9'></td>
+                    <td x = '12' y = '10' class='wall'></td>
+                    <td x = '12' y = '11'></td>
+                    <td x = '12' y = '12' class='wall'></td>
+                    <td x = '12' y = '13' class='wall'></td>
+                    <td x = '12' y = '14' class='wall'></td>
+                    <td x = '12' y = '15' class='wall'></td>
+                    <td x = '12' y = '16' class='wall'></td>
+                    <td x = '12' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '13' y = '1'></td>
+                    <td x = '13' y = '2'></td>
+                    <td x = '13' y = '3'></td>
+                    <td x = '13' y = '4' class='wall'></td>
+                    <td x = '13' y = '5'></td>
+                    <td x = '13' y = '6'></td>
+                    <td x = '13' y = '7'></td>
+                    <td x = '13' y = '8'></td>
+                    <td x = '13' y = '9'></td>
+                    <td x = '13' y = '10' class='wall'></td>
+                    <td x = '13' y = '11'></td>
+                    <td x = '13' y = '12'></td>
+                    <td x = '13' y = '13'></td>
+                    <td x = '13' y = '14'></td>
+                    <td x = '13' y = '15'></td>
+                    <td x = '13' y = '16'></td>
+                    <td x = '13' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '14' y = '1'></td>
+                    <td x = '14' y = '2' class='wall'></td>
+                    <td x = '14' y = '3' class='wall'></td>
+                    <td x = '14' y = '4' class='wall'></td>
+                    <td x = '14' y = '5'></td>
+                    <td x = '14' y = '6' class='wall'></td>
+                    <td x = '14' y = '7' class='wall'></td>
+                    <td x = '14' y = '8' class='wall'></td>
+                    <td x = '14' y = '9' class='wall'></td>
+                    <td x = '14' y = '10' class='wall'></td>
+                    <td x = '14' y = '11' class='wall'></td>
+                    <td x = '14' y = '12' class='wall'></td>
+                    <td x = '14' y = '13' class='wall'></td>
+                    <td x = '14' y = '14' class='wall'></td>
+                    <td x = '14' y = '15' class='wall'></td>
+                    <td x = '14' y = '16' class='wall'></td>
+                    <td x = '14' y = '17' class='wall'></td>
+                </tr>
+                <tr>
+                    <td x = '15' y = '1'></td>
+                    <td x = '15' y = '2' class='wall'></td>
+                    <td x = '15' y = '3'></td>
+                    <td x = '15' y = '4' class='wall'></td>
+                    <td x = '15' y = '5'></td>
+                    <td x = '15' y = '6' class='wall'></td>
+                    <td x = '15' y = '7'></td>
+                    <td x = '15' y = '8'></td>
+                    <td x = '15' y = '9'></td>
+                    <td x = '15' y = '10'></td>
+                    <td x = '15' y = '11'></td>
+                    <td x = '15' y = '12' class='wall'></td>
+                    <td x = '15' y = '13'></td>
+                    <td x = '15' y = '14'></td>
+                    <td x = '15' y = '15'></td>
+                    <td x = '15' y = '16' class='wall'></td>
+                    <td x = '15' y = '17' class='finish'></td>
+                </tr>
+                <tr>
+                    <td x = '16' y = '1'></td>
+                    <td x = '16' y = '2' class='wall'></td>
+                    <td x = '16' y = '3'></td>
+                    <td x = '16' y = '4' class='wall'></td>
+                    <td x = '16' y = '5'></td>
+                    <td x = '16' y = '6' class='wall'></td>
+                    <td x = '16' y = '7'></td>
+                    <td x = '16' y = '8' class='wall'></td>
+                    <td x = '16' y = '9' class='wall'></td>
+                    <td x = '16' y = '10' class='wall'></td>
+                    <td x = '16' y = '11'></td>
+                    <td x = '16' y = '12' class='wall'></td>
+                    <td x = '16' y = '13'></td>
+                    <td x = '16' y = '14' class='wall'></td>
+                    <td x = '16' y = '15'></td>
+                    <td x = '16' y = '16' class='wall'></td>
+                    <td x = '16' y = '17'></td>
+                </tr>
+                <tr>
+                    <td x = '17' y = '1' class='player'></td>
+                    <td x = '17' y = '2' class='wall'></td>
+                    <td x = '17' y = '3'></td>
+                    <td x = '17' y = '4'></td>
+                    <td x = '17' y = '5'></td>
+                    <td x = '17' y = '6'></td>
+                    <td x = '17' y = '7'></td>
+                    <td x = '17' y = '8' class='wall'></td>
+                    <td x = '17' y = '9'></td>
+                    <td x = '17' y = '10'></td>
+                    <td x = '17' y = '11'></td>
+                    <td x = '17' y = '12'></td>
+                    <td x = '17' y = '13'></td>
+                    <td x = '17' y = '14' class='wall'></td>
+                    <td x = '17' y = '15'></td>
+                    <td x = '17' y = '16'></td>
+                    <td x = '17' y = '17'></td>
+                </tr>
+            </table>
+        </div>
+        <div class='control'>
+            <button class='controlup'><i class="up"></i></button>
+            <button class='controlleft'><i class="left"></i></button>
+            <button class='controldown'><i class="down"></i></button>
+            <button class='controlright'><i class="right"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
