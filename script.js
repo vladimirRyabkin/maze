@@ -64,7 +64,6 @@ document.addEventListener('keydown', event => {
     if (!event.code.includes('Arrow')) {
         return;
     }
-    console.log(event);
     keyHandler(event.code, player)
 });
 
