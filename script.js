@@ -10,6 +10,13 @@ const btn = document.querySelector('.control').querySelectorAll('button');
 let i = 0;
 let j = 0;
 
+const direction = {
+    up: 'ArrowUp',
+    down: 'ArrowDown',
+    left: 'ArrowLeft',
+    right: 'ArrowRight'
+}
+
 function countStep() {
     i += 1;
     couterStep.textContent = 'Сделано ходов: ' + i;
@@ -40,123 +47,75 @@ function soundFanfar() {
 }
 
 function result() {
- console.log('это было не просто, но ты справился');
- console.log('сделано ходов: ' + i);
- console.log('допущено ошибок: ' + j);
- console.log('для решения этой не простой задачки тебе потребовалось'+ timer.textContent);
+    console.log('это было не просто, но ты справился');
+    console.log('сделано ходов: ' + i);
+    console.log('допущено ошибок: ' + j);
+    console.log('для решения этой не простой задачки тебе потребовалось' + timer.textContent);
+}
+
+function clear(player) {
+    setTimeout(() => {
+        player.classList.remove('playerInWall')
+    }, 300)
+}
+
+document.addEventListener('keydown', event => {
+    const player = document.querySelector('.player');
+    if (!event.code.includes('Arrow')) {
+        return;
+    }
+    console.log(event);
+    keyHandler(event.code, player)
+});
+
+function keyHandler(direct, player) {
+    const currentX = player.attributes.x.value;
+    const currentY = player.attributes.y.value;
+    const nextX = direct === direction.up
+        ? +currentX - 1
+        : direct === direction.down
+            ? +currentX + 1
+            : currentX
+    const nextY = direct === direction.left
+        ? +currentY - 1
+        : direct === direction.right
+            ? +currentY + 1
+            : currentY
+    const nextElement = getElement(nextX, nextY);
+
+    if (nextElement === null) {
+        player.classList.add('playerInWall')
+        countWrong();
+        soundWall();
+        clear(player)
+        return;
+    }
+    if (nextElement.classList.contains('wall')) {
+        player.classList.add('playerInWall')
+        clear(player)
+        soundWall();
+        countWrong();
+        return;
+    } else if (nextElement.classList.contains('finish')) {
+        soundFanfar();
+        result();
+        nextElement.classList.add('fanfare');
+        player.classList.remove('player');
+    } else {
+        soundClick();
+        countStep();
+        nextElement.classList.add('player');
+        player.classList.remove('player');
+    }
+}
+
+function getElement (x, y) {
+   return table.querySelector(`[x = "${x}" ][y = "${y}"]`);
 }
 
 btn.forEach(element => {
     element.addEventListener('click', () => {
         const player = document.querySelector('.player');
-        const coordPlayerX = player.attributes.x.value;
-        const coordPlayerY = player.attributes.y.value;
-        
-        function clear() {
-            setTimeout (() => {
-                player.classList.remove('playerInWall')
-            }, 300)
-        }
-
-        if (element.className === 'controlup') {
-            let player = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY}"]`);
-            let step = table.querySelector(`[x = "${+coordPlayerX - 1}" ][y = "${+coordPlayerY}"]`);
-            if (step === null) {
-                player.classList.add('playerInWall')
-                countWrong();
-                soundWall();
-                clear()
-                return;
-            }
-            if (step.className === 'wall') {
-                player.classList.add('playerInWall')
-                clear()
-                soundWall();
-                countWrong();
-                return;
-            } else if (step.className === 'finish') {
-                soundFanfar();
-                result();
-                step.classList.add('fanfare');
-                player.classList.remove('player');
-            } else {
-                soundClick();
-                countStep();
-                step.classList.add('player');
-                player.classList.remove('player');
-            }
-        }
-
-        if (element.className === 'controldown') {
-            let player = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY}"]`);
-            let step = table.querySelector(`[x = "${+coordPlayerX + 1}" ][y = "${+coordPlayerY}"]`);
-            if (step === null) {
-                player.classList.add('playerInWall')
-                soundWall();
-                clear()
-                countWrong();
-                return;
-            }
-            if (step.className === 'wall') {
-                player.classList.add('playerInWall')
-                soundWall();
-                clear()
-                countWrong();
-                return;
-            } else {
-                soundClick();
-                countStep();
-                step.classList.add('player');
-                player.classList.remove('player');
-            }
-        }
-
-        if (element.className === 'controlleft') {
-            let player = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY}"]`);
-            let step = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY - 1}"]`);
-            if (step === null) {
-                player.classList.add('playerInWall')
-                clear()
-                soundWall();
-                countWrong();
-                return;
-            }
-            if (step.className === 'wall') {
-                player.classList.add('playerInWall')
-                soundWall();
-                countWrong();
-                clear()
-                return;
-            } else {
-                countStep();
-                soundClick();
-                step.classList.add('player');
-                player.classList.remove('player');
-            }
-        }
-
-        if (element.className === 'controlright') {
-            let player = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY}"]`);
-            let step = table.querySelector(`[x = "${+coordPlayerX}" ][y = "${+coordPlayerY + 1}"]`);
-            if (step === null) {
-                player.classList.add('playerInWall')
-                soundWall();
-                clear()
-                countWrong();
-                return;
-            }
-            if (step.className === 'wall') {
-                player.classList.add('playerInWall')
-                soundWall();
-                clear()
-                countWrong();
-                return;
-            } else {
-                soundClick();
-                countStep();
-                player.classList.remove('player');
-                step.classList.add('player');
-            }
-        }
+        keyHandler(element.className, player)
     });
 });

@@ -46,28 +46,28 @@ button {
     width: 120px;
 }
 
-.controlup {
+.ArrowUp {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 1;
 }
 
-.controlleft {
+.ArrowLeft {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 2;
     grid-row-end: 2;
 }
 
-.controldown {
+.ArrowDown {
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
 }
 
-.controlright {
+.ArrowRight {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 2;
